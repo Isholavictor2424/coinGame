@@ -27,6 +27,7 @@ const _layout = () => {
       }
   return (
     <View style = {styles.page}>
+      <View style = {{flexDirection:"row", justifyContent:"space-between"}}>
       <TouchableOpacity onPress={() =>playGame('tail')}>
         <Botton
         text = "tail"
@@ -42,11 +43,12 @@ const _layout = () => {
         text = "Reset score"
         />
       </TouchableOpacity>
+      </View>
 
-      <Text>Your choice: {guess}</Text>
-      <Text>Computer choice: {computerMove}</Text>
-      <Text>Result: {result}</Text>
-      <Text>score:{"\n"}win:{score.win}{"\n"}lose{score.lose}</Text>
+      <Text style = {styles.result}>Your choice: {guess}</Text>
+      <Text style = {styles.result}>Computer choice: {computerMove}</Text>
+      <Text style = {styles.result}>Result: {result}</Text>
+      <Text style = {styles.result}>score:{"\n"}win:{score.win}{"\n"}lose{score.lose}</Text>
     </View>
     
   )
@@ -60,5 +62,11 @@ const styles = StyleSheet.create({
         flex:1,
         paddingTop:"50",
         padding:"30"
+    },
+    result:{
+      fontSize:"17",
+      fontWeight:"500",
+      color:"black",
+
     }
 })
